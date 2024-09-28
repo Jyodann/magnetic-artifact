@@ -44,6 +44,14 @@ instances {
     x: 2.0
   }
 }
+instances {
+  id: "Obstacle"
+  prototype: "/main/Obstacle.go"
+  position {
+    x: 1529.0
+    y: 353.0
+  }
+}
 scale_along_z: 0
 embedded_instances {
   id: "go"
@@ -58,6 +66,24 @@ embedded_instances {
   data: "components {\n"
   "  id: \"ScoreUI\"\n"
   "  component: \"/main/ScoreUI.gui\"\n"
+  "}\n"
+  "components {\n"
+  "  id: \"Score\"\n"
+  "  component: \"/main/Score.script\"\n"
+  "}\n"
+  ""
+}
+embedded_instances {
+  id: "spawnner"
+  data: "components {\n"
+  "  id: \"Spawner\"\n"
+  "  component: \"/main/Spawner.script\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"factory\"\n"
+  "  type: \"factory\"\n"
+  "  data: \"prototype: \\\"/main/Obstacle.go\\\"\\n"
+  "\"\n"
   "}\n"
   ""
 }

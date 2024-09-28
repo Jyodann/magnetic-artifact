@@ -1,0 +1,24 @@
+function init(self)
+	-- Add initialization code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
+	timer.delay(1, true, 
+	function() 
+		local pos = vmath.vector3(1500, math.random(0, 720), 0)
+		local obs_id = factory.create("#factory", pos)
+	end
+	)	
+end
+
+function final(self)
+	-- Add finalization code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
+end
+
+function update(self, dt)
+	-- Add update code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
+end
+

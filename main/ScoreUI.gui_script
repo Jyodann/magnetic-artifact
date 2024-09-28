@@ -1,0 +1,29 @@
+function init(self)
+	-- Add initialization code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
+
+	local s = gui.get_node("score_text")
+	
+	local score = 0
+	gui.set_text(s, score)
+	timer.delay(0.5, true,
+		function()
+			score = score + 1
+			gui.set_text(s, score)
+		end)
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("update_health") then
+		-- set the score counter to new score
+		local score_node = gui.get_node("health")
+		gui.set_text(score_node, "SCORE: " .. message.health)
+	end
+end
+
+function update(self, dt)
+	-- Add update code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
+end

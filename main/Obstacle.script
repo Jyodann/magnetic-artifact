@@ -1,0 +1,18 @@
+go.property("speed", 20.0)
+
+function init(self)
+	-- Add initialization code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
+end
+
+function update(self, dt)
+	-- Add update code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
+	local pos = go.get_position()
+	
+	pos.x = pos.x - (self.speed * dt * 10.0)
+	go.set_position(pos)
+end
+
