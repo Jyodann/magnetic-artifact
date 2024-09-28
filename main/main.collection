@@ -44,14 +44,6 @@ instances {
     x: 2.0
   }
 }
-instances {
-  id: "Obstacle"
-  prototype: "/main/Obstacle.go"
-  position {
-    x: 1529.0
-    y: 353.0
-  }
-}
 scale_along_z: 0
 embedded_instances {
   id: "go"
@@ -80,7 +72,7 @@ embedded_instances {
   "  component: \"/main/Spawner.script\"\n"
   "}\n"
   "embedded_components {\n"
-  "  id: \"factory\"\n"
+  "  id: \"obs\"\n"
   "  type: \"factory\"\n"
   "  data: \"prototype: \\\"/main/Obstacle.go\\\"\\n"
   "\"\n"

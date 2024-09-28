@@ -4,6 +4,12 @@ function init(self)
 	-- Add initialization code here
 	-- Learn more: https://defold.com/manuals/script/
 	-- Remove this function if not needed
+
+	timer.delay(5, false, 
+	function() 
+		print("Delete")
+		go.delete()
+	end)
 end
 
 function update(self, dt)
@@ -11,7 +17,7 @@ function update(self, dt)
 	-- Learn more: https://defold.com/manuals/script/
 	-- Remove this function if not needed
 	local pos = go.get_position()
-	
+	 
 	pos.x = pos.x - (self.speed * dt * 10.0)
 	go.set_position(pos)
 end

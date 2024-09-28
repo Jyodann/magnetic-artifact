@@ -1,3 +1,5 @@
+go.property("starting_speed", 100.0)
+
 function init(self)
 	-- Add initialization code here
 	-- Learn more: https://defold.com/manuals/script/
@@ -5,7 +7,9 @@ function init(self)
 	timer.delay(1, true, 
 	function() 
 		local pos = vmath.vector3(1500, math.random(0, 720), 0)
-		local obs_id = factory.create("#factory", pos)
+		local obs_id = factory.create("#obs", pos)
+		local sprite_url = msg.url(nil, obs_id, "Obstacle")
+		go.set(sprite_url, "speed", self.starting_speed)
 	end
 	)	
 end
@@ -17,6 +21,9 @@ function final(self)
 end
 
 function update(self, dt)
+	self.starting_speed = self.starting_speed + dt
+
+	--- print(self.starting_speed)
 	-- Add update code here
 	-- Learn more: https://defold.com/manuals/script/
 	-- Remove this function if not needed

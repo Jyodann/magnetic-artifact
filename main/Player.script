@@ -3,6 +3,7 @@ local bottom_magnet_location = vmath.vector3()
 
 go.property("health", 3)
 
+
 function init(self)
 	-- Add initialization code here
 	-- Learn more: https://defold.com/manuals/script/
@@ -14,6 +15,12 @@ function init(self)
 	top_magnet_location = go.get_position("Magnet1")
 	bottom_magnet_location = go.get_position("Magnet2")
 
+	local score = 0
+	timer.delay(0.5, true,
+	function()
+		score = score + 1
+		msg.post("/ScoreUI#ScoreUI", "update_score", { score = score })
+	end)
 	msg.post("/ScoreUI#ScoreUI", "update_health", { health = self.health })
 end
 
