@@ -1,0 +1,63 @@
+local top_magnet_location = vmath.vector3()
+local bottom_magnet_location = vmath.vector3()
+
+function init(self)
+	-- Add initialization code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
+	msg.post(".", "acquire_input_focus")
+	self.vel = vmath.vector3()
+	self.blue_polarity = true
+	self.attraction = 40.0
+	top_magnet_location = go.get_position("Magnet1")
+	bottom_magnet_location = go.get_position("Magnet2")
+end
+
+function update(self, dt)
+	-- Add update code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
+	local pos = go.get_position() -- <3>
+	pos = pos + self.vel * dt -- <4>
+	if pos.y >= 656.0 then
+			pos.y = 656.0
+		else if pos.y <= 64 then
+			pos.y = 64
+		end 
+	end
+	go.set_position(pos) -- <5>
+
+	local distance_to_top_magnet = (math.abs(pos.y - top_magnet_location.y) - 64) / 592
+	local distance_to_bottom_magnet = (math.abs(pos.y - bottom_magnet_location.y) - 64) / 592
+	print(distance_to_top_magnet, distance_to_bottom_magnet)
+	local top_polarity = go.get("Magnet1#Magnet", "blue_polarity")
+	local bottom_polarity = go.get("Magnet2#Magnet", "blue_polarity")
+
+	if top_polarity == not self.blue_polarity then
+		self.vel.y = self.attraction * (1 + distance_to_bottom_magnet * 30.0) 
+	else
+		self.vel.y = - self.attraction * (1 + distance_to_top_magnet * 30.0)
+	end
+end
+
+function fixed_update(self, dt)
+	-- This function is called if 'Fixed Update Frequency' is enabled in the Engine section of game.project
+	-- Can be coupled with fixed updates of the physics simulation if 'Use Fixed Timestep' is enabled in
+	-- Physics section of game.project
+	-- Add update code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
+end
+
+function on_input(self, action_id, action)
+
+	if action_id == hash("space") and action.pressed then
+
+		if self.blue_polarity then
+			msg.post("#sprite", "play_animation", { id = hash("red")})
+		else 
+			msg.post("#sprite", "play_animation", { id = hash("blue")})
+		end
+		self.blue_polarity = not self.blue_polarity
+	end
+end

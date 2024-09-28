@@ -1,0 +1,21 @@
+fonts {
+  name: "PixelFont"
+  font: "/PixelFont.font"
+}
+nodes {
+  position {
+    x: 640.0
+    y: 600.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "Hello There"
+  font: "PixelFont"
+  id: "text"
+  inherit_alpha: true
+}
+material: "/builtins/materials/gui.material"
+adjust_reference: ADJUST_REFERENCE_PARENT

@@ -1,0 +1,63 @@
+name: "main"
+instances {
+  id: "Player"
+  prototype: "/main/Player.go"
+  position {
+    x: 200.0
+    y: 360.0
+  }
+}
+instances {
+  id: "Magnet1"
+  prototype: "/main/Magnet.go"
+  position {
+    x: 640.0
+    y: 720.0
+  }
+  component_properties {
+    id: "Magnet"
+    properties {
+      id: "blue_polarity"
+      value: "false"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+  }
+  scale3 {
+    x: 2.0
+  }
+}
+instances {
+  id: "Magnet2"
+  prototype: "/main/Magnet.go"
+  position {
+    x: 640.0
+  }
+  component_properties {
+    id: "Magnet"
+    properties {
+      id: "y_effect"
+      value: "10.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  scale3 {
+    x: 2.0
+  }
+}
+scale_along_z: 0
+embedded_instances {
+  id: "go"
+  data: "components {\n"
+  "  id: \"empty\"\n"
+  "  component: \"/main/empty.gui\"\n"
+  "}\n"
+  ""
+}
+embedded_instances {
+  id: "ScoreUI"
+  data: "components {\n"
+  "  id: \"ScoreUI\"\n"
+  "  component: \"/main/ScoreUI.gui\"\n"
+  "}\n"
+  ""
+}

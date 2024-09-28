@@ -1,0 +1,7 @@
+images {
+  image: "/tiles/blue.png"
+}
+images {
+  image: "/tiles/red.png"
+}
+extrude_borders: 2

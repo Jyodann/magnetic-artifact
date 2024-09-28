@@ -1,0 +1,4 @@
+font: "/PixelifySans-VariableFont_wght.ttf"
+material: "/builtins/fonts/font.material"
+size: 18
+characters: " !\"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~"
