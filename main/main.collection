@@ -47,6 +47,20 @@ instances {
     x: 2.0
   }
 }
+instances {
+  id: "Portal"
+  prototype: "/main/Portal.go"
+  position {
+    x: 3840.0
+    y: 360.0
+    z: 1.0
+  }
+  scale3 {
+    x: 12.0
+    y: 12.0
+    z: 12.0
+  }
+}
 scale_along_z: 0
 embedded_instances {
   id: "go"
@@ -98,15 +112,30 @@ embedded_instances {
   "looping: 1\\n"
   "\"\n"
   "}\n"
+  "embedded_components {\n"
+  "  id: \"hellSound\"\n"
+  "  type: \"sound\"\n"
+  "  data: \"sound: \\\"/hell_stage.wav\\\"\\n"
+  "looping: 1\\n"
+  "\"\n"
+  "}\n"
   ""
 }
 embedded_instances {
-  id: "go1"
+  id: "city_background"
+  children: "Portal"
+  children: "frame_1"
+  children: "frame_2"
+  children: "frame_3"
   data: "components {\n"
   "  id: \"ScrollingBackground\"\n"
   "  component: \"/main/ScrollingBackground.script\"\n"
   "}\n"
-  "embedded_components {\n"
+  ""
+}
+embedded_instances {
+  id: "frame_1"
+  data: "embedded_components {\n"
   "  id: \"sprite\"\n"
   "  type: \"sprite\"\n"
   "  data: \"default_animation: \\\"amongus\\\"\\n"
@@ -128,12 +157,8 @@ embedded_instances {
   ""
 }
 embedded_instances {
-  id: "go2"
-  data: "components {\n"
-  "  id: \"ScrollingBackground\"\n"
-  "  component: \"/main/ScrollingBackground.script\"\n"
-  "}\n"
-  "embedded_components {\n"
+  id: "frame_2"
+  data: "embedded_components {\n"
   "  id: \"sprite\"\n"
   "  type: \"sprite\"\n"
   "  data: \"default_animation: \\\"amongus\\\"\\n"
@@ -155,5 +180,31 @@ embedded_instances {
   ""
   position {
     x: 1280.0
+  }
+}
+embedded_instances {
+  id: "frame_3"
+  data: "embedded_components {\n"
+  "  id: \"sprite\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"default_animation: \\\"amongus\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "size {\\n"
+  "  x: 1280.0\\n"
+  "  y: 720.0\\n"
+  "}\\n"
+  "textures {\\n"
+  "  sampler: \\\"texture_sampler\\\"\\n"
+  "  texture: \\\"/player.atlas\\\"\\n"
+  "}\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 640.0\n"
+  "    y: 360.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 2560.0
   }
 }

@@ -10,4 +10,18 @@ images {
 images {
   image: "/tiles/amongus.png"
 }
+images {
+  image: "/tiles/hellmongus.png"
+}
+animations {
+  id: "portal_anim"
+  images {
+    image: "/tiles/PORTAL 1.png"
+  }
+  images {
+    image: "/tiles/PORTAL 2.png"
+  }
+  playback: PLAYBACK_LOOP_PINGPONG
+  fps: 4
+}
 extrude_borders: 2

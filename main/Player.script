@@ -7,6 +7,8 @@ go.property("health", 3)
 
 function init(self)
 	sound.play("/sounds#sound")
+	sound.play("/sounds#hellSound")
+	sound.set_gain("/sounds#hellSound", 0)
 	self.is_game_started = false
 	-- Add initialization code here
 	-- Learn more: https://defold.com/manuals/script/
@@ -19,7 +21,7 @@ function init(self)
 	bottom_magnet_location = go.get_position("Magnet2")
 	self.sound_speed = 1.0
 	self.score = 0
-	
+	self.is_hell = false
 	msg.post("/ScoreUI#ScoreUI", "update_health", { health = self.health })
 end
 
@@ -27,11 +29,26 @@ function on_message(self, message_id, message, sender)
 	-- check for the message
 	if message_id == hash("trigger_response") then
 		if message.enter then
-			-- take action for entry
-			print("I am now inside", message.other_group)
-			self.health = self.health - 1
-			msg.post("/ScoreUI#ScoreUI", "update_health", { health = self.health })
-			go.delete(message.other_id)
+			if message.other_group == hash("obs") then
+				-- take action for entry
+				print("I am now inside", message.other_group)
+				self.health = self.health - 1
+				msg.post("/ScoreUI#ScoreUI", "update_health", { health = self.health })
+				go.delete(message.other_id)
+			end
+
+			if message.other_group == hash("portal") then
+				self.is_hell = not self.is_hell
+				go.set("/Magnet1#Magnet", "is_hell", self.is_hell)
+				go.set("/Magnet2#Magnet", "is_hell", self.is_hell)
+				if self.is_hell then
+					sound.set_gain("/sounds#sound", 0)
+					sound.set_gain("/sounds#hellSound", 1)
+				else 
+					sound.set_gain("/sounds#sound", 1)
+					sound.set_gain("/sounds#hellSound", 0)
+				end
+			end
 		end	
 	end
 end
@@ -71,7 +88,9 @@ function update(self, dt)
 end
 
 function on_input(self, action_id, action)
-
+	if self.is_hell then 
+		return
+	end
 	if action_id == hash("space") and action.pressed then
 		if not self.is_game_started then
 			msg.post("/spawnner#Spawner", "start_spawning")

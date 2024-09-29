@@ -17,3 +17,10 @@ input_method = HiddenInputField
 [project]
 title = MagnetGame
 
+[label]
+subpixels = 0
+
+[graphics]
+default_texture_min_filter = nearest
+default_texture_mag_filter = nearest
+
