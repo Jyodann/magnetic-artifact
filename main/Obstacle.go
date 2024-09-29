@@ -20,6 +20,10 @@ embedded_components {
   position {
     z: 1.0
   }
+  scale {
+    x: 1.5
+    y: 1.5
+  }
 }
 embedded_components {
   id: "collisionobject"

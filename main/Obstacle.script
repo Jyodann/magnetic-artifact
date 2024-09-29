@@ -1,15 +1,27 @@
+local trash_names = {
+	"CHAIR",
+	"MIAO MIAO",
+	"DUMBELL",
+	"PIANO",
+	"TABLE"
+}
+
 go.property("speed", 20.0)
 
 function init(self)
 	-- Add initialization code here
 	-- Learn more: https://defold.com/manuals/script/
 	-- Remove this function if not needed
-
-	timer.delay(5, false, 
+	msg.post("#sprite", "play_animation", { id = hash(trash_names[math.random(1, #trash_names)])})
+	timer.delay(3, false, 
 	function() 
 		print("Delete")
 		go.delete()
 	end)
+
+	local rotz = math.random(0, 360)
+
+	go.set(".", "euler.z", rotz)
 end
 
 function update(self, dt)
@@ -20,5 +32,9 @@ function update(self, dt)
 	 
 	pos.x = pos.x - (self.speed * dt * 10.0)
 	go.set_position(pos)
+	local rotz = go.get(".", "euler.z")
+	rotz = rotz - (self.speed * dt) 
+	
+	go.set(".", "euler.z", rotz)
 end
 

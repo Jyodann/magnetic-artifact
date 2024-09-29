@@ -36,7 +36,7 @@ nodes {
 nodes {
   position {
     x: 640.0
-    y: 250.0
+    y: 143.0
   }
   size {
     x: 200.0
@@ -46,6 +46,21 @@ nodes {
   text: "Press Enter to Play Again!"
   font: "PixelFont"
   id: "score_label2"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 640.0
+    y: 255.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "Score: 0"
+  font: "PixelFont"
+  id: "highscore_label"
   inherit_alpha: true
 }
 material: "/builtins/materials/gui.material"

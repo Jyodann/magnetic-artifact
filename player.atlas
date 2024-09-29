@@ -25,6 +25,21 @@ images {
 images {
   image: "/tiles/HellMan_Red.png"
 }
+images {
+  image: "/tiles/CHAIR.png"
+}
+images {
+  image: "/tiles/DUMBELL.png"
+}
+images {
+  image: "/tiles/MIAO MIAO.png"
+}
+images {
+  image: "/tiles/PIANO.png"
+}
+images {
+  image: "/tiles/TABLE.png"
+}
 animations {
   id: "portal_anim"
   images {
