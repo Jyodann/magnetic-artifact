@@ -4,14 +4,22 @@ function init(self)
 	-- Add initialization code here
 	-- Learn more: https://defold.com/manuals/script/
 	-- Remove this function if not needed
-	timer.delay(1, true, 
-	function() 
-		local pos = vmath.vector3(1500, math.random(0, 720), 0)
-		local obs_id = factory.create("#obs", pos)
-		local sprite_url = msg.url(nil, obs_id, "Obstacle")
-		go.set(sprite_url, "speed", self.starting_speed)
-	end
+	self.start_spawning = false
+end
+
+function on_message(self, message_id, message, sender)
+	-- check for the message
+	if message_id == hash("start_spawning") then
+		self.start_spawning = true
+		timer.delay(1, true, 
+		function() 
+			local pos = vmath.vector3(1500, math.random(0, 720), 0)
+			local obs_id = factory.create("#obs", pos)
+			local sprite_url = msg.url(nil, obs_id, "Obstacle")
+			go.set(sprite_url, "speed", self.starting_speed)
+		end
 	)	
+	end
 end
 
 function final(self)
@@ -21,6 +29,10 @@ function final(self)
 end
 
 function update(self, dt)
+	print(self.starting_speed)
+	if not self.start_spawning then
+		return
+	end
 	self.starting_speed = self.starting_speed + dt
 
 	--- print(self.starting_speed)

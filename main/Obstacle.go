@@ -17,6 +17,9 @@ embedded_components {
   "  texture: \"/player.atlas\"\n"
   "}\n"
   ""
+  position {
+    z: 1.0
+  }
 }
 embedded_components {
   id: "collisionobject"

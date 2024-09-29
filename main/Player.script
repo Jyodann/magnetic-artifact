@@ -1,10 +1,13 @@
 local top_magnet_location = vmath.vector3()
 local bottom_magnet_location = vmath.vector3()
 
+
 go.property("health", 3)
 
 
 function init(self)
+	sound.play("/sounds#sound")
+	self.is_game_started = false
 	-- Add initialization code here
 	-- Learn more: https://defold.com/manuals/script/
 	-- Remove this function if not needed
@@ -14,13 +17,9 @@ function init(self)
 	self.attraction = 40.0
 	top_magnet_location = go.get_position("Magnet1")
 	bottom_magnet_location = go.get_position("Magnet2")
-
-	local score = 0
-	timer.delay(0.5, true,
-	function()
-		score = score + 1
-		msg.post("/ScoreUI#ScoreUI", "update_score", { score = score })
-	end)
+	self.sound_speed = 1.0
+	self.score = 0
+	
 	msg.post("/ScoreUI#ScoreUI", "update_health", { health = self.health })
 end
 
@@ -38,6 +37,13 @@ function on_message(self, message_id, message, sender)
 end
 
 function update(self, dt)
+	if not self.is_game_started then
+		return
+	end
+	
+	print(self.sound_speed)
+	self.sound_speed = self.sound_speed + (dt / 200.0) 
+	go.set("/sounds#sound", "speed", self.sound_speed)
 	-- Add update code here
 	-- Learn more: https://defold.com/manuals/script/
 	-- Remove this function if not needed
@@ -67,7 +73,16 @@ end
 function on_input(self, action_id, action)
 
 	if action_id == hash("space") and action.pressed then
-
+		if not self.is_game_started then
+			msg.post("/spawnner#Spawner", "start_spawning")
+			timer.delay(0.5, true,
+			function()
+				self.score = self.score + 1
+				msg.post("/ScoreUI#ScoreUI", "update_score", { score = self.score })
+			end)
+		end 
+		self.is_game_started = true
+		
 		if self.blue_polarity then
 			msg.post("#sprite", "play_animation", { id = hash("red")})
 		else 

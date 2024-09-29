@@ -7,4 +7,7 @@ images {
 images {
   image: "/tiles/white.png"
 }
+images {
+  image: "/tiles/amongus.png"
+}
 extrude_borders: 2

@@ -5,6 +5,7 @@ instances {
   position {
     x: 200.0
     y: 360.0
+    z: 1.0
   }
 }
 instances {
@@ -13,6 +14,7 @@ instances {
   position {
     x: 640.0
     y: 720.0
+    z: 1.0
   }
   component_properties {
     id: "Magnet"
@@ -31,6 +33,7 @@ instances {
   prototype: "/main/Magnet.go"
   position {
     x: 640.0
+    z: 1.0
   }
   component_properties {
     id: "Magnet"
@@ -64,6 +67,9 @@ embedded_instances {
   "  component: \"/main/Score.script\"\n"
   "}\n"
   ""
+  position {
+    z: -1.0
+  }
 }
 embedded_instances {
   id: "spawnner"
@@ -78,4 +84,76 @@ embedded_instances {
   "\"\n"
   "}\n"
   ""
+}
+embedded_instances {
+  id: "sounds"
+  data: "components {\n"
+  "  id: \"SoundPlayer\"\n"
+  "  component: \"/main/SoundPlayer.script\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"sound\"\n"
+  "  type: \"sound\"\n"
+  "  data: \"sound: \\\"/normal_stage.wav\\\"\\n"
+  "looping: 1\\n"
+  "\"\n"
+  "}\n"
+  ""
+}
+embedded_instances {
+  id: "go1"
+  data: "components {\n"
+  "  id: \"ScrollingBackground\"\n"
+  "  component: \"/main/ScrollingBackground.script\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"sprite\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"default_animation: \\\"amongus\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "size {\\n"
+  "  x: 1280.0\\n"
+  "  y: 720.0\\n"
+  "}\\n"
+  "textures {\\n"
+  "  sampler: \\\"texture_sampler\\\"\\n"
+  "  texture: \\\"/player.atlas\\\"\\n"
+  "}\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 640.0\n"
+  "    y: 360.0\n"
+  "  }\n"
+  "}\n"
+  ""
+}
+embedded_instances {
+  id: "go2"
+  data: "components {\n"
+  "  id: \"ScrollingBackground\"\n"
+  "  component: \"/main/ScrollingBackground.script\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"sprite\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"default_animation: \\\"amongus\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "size {\\n"
+  "  x: 1280.0\\n"
+  "  y: 720.0\\n"
+  "}\\n"
+  "textures {\\n"
+  "  sampler: \\\"texture_sampler\\\"\\n"
+  "  texture: \\\"/player.atlas\\\"\\n"
+  "}\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 640.0\n"
+  "    y: 360.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 1280.0
+  }
 }

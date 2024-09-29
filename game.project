@@ -15,5 +15,5 @@ display_device_info = 0
 input_method = HiddenInputField
 
 [project]
-title = HelloWorld
+title = MagnetGame
 
