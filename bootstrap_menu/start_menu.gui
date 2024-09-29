@@ -1,11 +1,16 @@
+script: "/bootstrap_menu/start_menu.gui_script"
 fonts {
   name: "PixelFont_copy"
-  font: "/PixelFont_copy.font"
+  font: "/PixelFont_LG.font"
+}
+textures {
+  name: "player"
+  texture: "/player.atlas"
 }
 nodes {
   position {
     x: 640.0
-    y: 360.0
+    y: 100.0
   }
   size {
     x: 200.0
@@ -14,8 +19,19 @@ nodes {
   type: TYPE_TEXT
   text: "Press Enter to Begin!"
   font: "PixelFont_copy"
-  id: "text"
+  id: "begin_text"
   inherit_alpha: true
+}
+nodes {
+  position {
+    x: 639.0
+    y: 477.0
+  }
+  type: TYPE_BOX
+  texture: "player/MIAO MIAO"
+  id: "box"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
 }
 material: "/builtins/materials/gui.material"
 adjust_reference: ADJUST_REFERENCE_PARENT

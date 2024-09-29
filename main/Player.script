@@ -2,7 +2,7 @@ local top_magnet_location = vmath.vector3()
 local bottom_magnet_location = vmath.vector3()
 
 
-go.property("health", 3)
+go.property("health", 5)
 
 
 function init(self)
@@ -91,8 +91,9 @@ function update(self, dt)
 	end
 	
 	
-	self.sound_speed = self.sound_speed + (dt / 200.0) 
+	self.sound_speed = self.sound_speed + (dt / 500.0) 
 	go.set("/sounds#sound", "speed", self.sound_speed)
+	go.set("/sounds#hellSound", "speed", self.sound_speed)
 	-- Add update code here
 	-- Learn more: https://defold.com/manuals/script/
 	-- Remove this function if not needed
@@ -131,7 +132,7 @@ function on_input(self, action_id, action)
 				self.score = self.score + 1
 				msg.post("/ScoreUI#ScoreUI", "update_score", { score = self.score })
 
-				if self.score % 30 == 0 then
+				if self.score % 25 == 0 then
 					print("Change Dim")
 					msg.post("/city_background#ScrollingBackground", "change_dim")
 				end

@@ -1,7 +1,7 @@
 script: "/main/ScoreUI.gui_script"
 fonts {
   name: "PixelFont"
-  font: "/PixelFont.font"
+  font: "/PixelFont_MD.font"
 }
 textures {
   name: "player"

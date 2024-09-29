@@ -1,4 +1,4 @@
 font: "/Jersey10-Regular.ttf"
 material: "/builtins/fonts/font.material"
-size: 24
+size: 36
 characters: " !\"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~"

@@ -1,4 +1,4 @@
-go.property("starting_speed", 120.0)
+go.property("starting_speed", 90.0)
 
 function init(self)
 	-- Add initialization code here

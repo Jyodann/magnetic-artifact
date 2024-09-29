@@ -1,7 +1,7 @@
 script: "/bootstrap_menu/game_over_gui.gui_script"
 fonts {
   name: "PixelFont"
-  font: "/PixelFont_copy.font"
+  font: "/PixelFont_LG.font"
 }
 nodes {
   position {
