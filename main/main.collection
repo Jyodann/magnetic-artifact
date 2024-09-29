@@ -24,9 +24,6 @@ instances {
       type: PROPERTY_TYPE_BOOLEAN
     }
   }
-  scale3 {
-    x: 2.0
-  }
 }
 instances {
   id: "Magnet2"
@@ -43,15 +40,12 @@ instances {
       type: PROPERTY_TYPE_NUMBER
     }
   }
-  scale3 {
-    x: 2.0
-  }
 }
 instances {
   id: "Portal"
   prototype: "/main/Portal.go"
   position {
-    x: 3840.0
+    x: -500.0
     y: 360.0
     z: 1.0
   }
@@ -117,6 +111,18 @@ embedded_instances {
   "  type: \"sound\"\n"
   "  data: \"sound: \\\"/hell_stage.wav\\\"\\n"
   "looping: 1\\n"
+  "\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"teleport\"\n"
+  "  type: \"sound\"\n"
+  "  data: \"sound: \\\"/Teleporter Woosh.wav\\\"\\n"
+  "\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"damage\"\n"
+  "  type: \"sound\"\n"
+  "  data: \"sound: \\\"/Magnet Thunk.wav\\\"\\n"
   "\"\n"
   "}\n"
   ""

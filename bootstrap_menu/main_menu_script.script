@@ -1,0 +1,11 @@
+function on_input(self, action_id, action)
+	if action_id == hash("start") and action.pressed then
+		print("Hello")
+		msg.post("loader:/go#loader", "start_game")
+	end
+end
+
+
+function init(self)
+	msg.post(".", "acquire_input_focus")
+end

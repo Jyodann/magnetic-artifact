@@ -55,9 +55,14 @@ function update(self, dt)
 	go.set_position(portal_loc, "Portal")
 end
 
-function on_input(self, action_id, action)
-	if action_id == hash("change_dim") and action.pressed then
+function on_message(self, message_id, message, sender)
+	if message_id == hash("change_dim") then
 		self.is_hell = not self.is_hell
 		self.pending_transition = true
+	end
+end	
+function on_input(self, action_id, action)
+	if action_id == hash("change_dim") and action.pressed then
+		
 	end	
 end

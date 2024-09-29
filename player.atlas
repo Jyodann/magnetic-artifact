@@ -13,6 +13,18 @@ images {
 images {
   image: "/tiles/hellmongus.png"
 }
+images {
+  image: "/tiles/MEN.png"
+}
+images {
+  image: "/tiles/MEN 2.png"
+}
+images {
+  image: "/tiles/HellMan_Blue.png"
+}
+images {
+  image: "/tiles/HellMan_Red.png"
+}
 animations {
   id: "portal_anim"
   images {

@@ -1,4 +1,4 @@
-go.property("starting_speed", 100.0)
+go.property("starting_speed", 120.0)
 
 function init(self)
 	-- Add initialization code here
@@ -29,7 +29,6 @@ function final(self)
 end
 
 function update(self, dt)
-	print(self.starting_speed)
 	if not self.start_spawning then
 		return
 	end

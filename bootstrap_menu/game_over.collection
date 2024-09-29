@@ -1,0 +1,14 @@
+name: "main_menu"
+scale_along_z: 0
+embedded_instances {
+  id: "go"
+  data: "components {\n"
+  "  id: \"empty\"\n"
+  "  component: \"/main/empty.gui\"\n"
+  "}\n"
+  "components {\n"
+  "  id: \"game_over1\"\n"
+  "  component: \"/bootstrap_menu/game_over.gui\"\n"
+  "}\n"
+  ""
+}
