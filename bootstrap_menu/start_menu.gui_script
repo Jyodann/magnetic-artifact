@@ -1,4 +1,4 @@
 function init(self)
 	local node = gui.get_node("begin_text")
-	gui.animate(node, "position.y", 90, gui.EASING_INOUTQUAD, 0.75, 0, nil, gui.PLAYBACK_LOOP_PINGPONG)
+	gui.animate(node, "position.y", 325, gui.EASING_INOUTQUAD, 0.75, 0, nil, gui.PLAYBACK_LOOP_PINGPONG)
 end

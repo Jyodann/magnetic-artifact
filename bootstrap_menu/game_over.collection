@@ -10,5 +10,12 @@ embedded_instances {
   "  id: \"game_over1\"\n"
   "  component: \"/bootstrap_menu/game_over.gui\"\n"
   "}\n"
+  "embedded_components {\n"
+  "  id: \"sound\"\n"
+  "  type: \"sound\"\n"
+  "  data: \"sound: \\\"/failed.wav\\\"\\n"
+  "looping: 1\\n"
+  "\"\n"
+  "}\n"
   ""
 }

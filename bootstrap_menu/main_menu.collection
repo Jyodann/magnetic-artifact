@@ -14,5 +14,13 @@ embedded_instances {
   "  id: \"start_menu\"\n"
   "  component: \"/bootstrap_menu/start_menu.gui\"\n"
   "}\n"
+  "embedded_components {\n"
+  "  id: \"sound\"\n"
+  "  type: \"sound\"\n"
+  "  data: \"sound: \\\"/main_menu_music.wav\\\"\\n"
+  "looping: 1\\n"
+  "gain: 0.5\\n"
+  "\"\n"
+  "}\n"
   ""
 }

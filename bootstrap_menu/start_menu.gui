@@ -10,7 +10,26 @@ textures {
 nodes {
   position {
     x: 640.0
-    y: 100.0
+    y: 360.0
+  }
+  scale {
+    x: 1.425258
+    y: 1.619861
+    z: 1.619861
+  }
+  size {
+    x: 900.0
+    y: 450.0
+  }
+  type: TYPE_BOX
+  texture: "player/EPIK_ANIME_WALLPEPER"
+  id: "box"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 540.0
+    y: 335.0
   }
   size {
     x: 200.0
@@ -21,17 +40,6 @@ nodes {
   font: "PixelFont_copy"
   id: "begin_text"
   inherit_alpha: true
-}
-nodes {
-  position {
-    x: 639.0
-    y: 477.0
-  }
-  type: TYPE_BOX
-  texture: "player/MIAO MIAO"
-  id: "box"
-  inherit_alpha: true
-  size_mode: SIZE_MODE_AUTO
 }
 material: "/builtins/materials/gui.material"
 adjust_reference: ADJUST_REFERENCE_PARENT

@@ -3,44 +3,44 @@ fonts {
   name: "PixelFont"
   font: "/PixelFont_LG.font"
 }
+fonts {
+  name: "PixelFont_XL"
+  font: "/PixelFont_XL.font"
+}
+textures {
+  name: "player"
+  texture: "/player.atlas"
+}
 nodes {
   position {
-    x: 640.0
-    y: 360.0
+    x: 632.0
+    y: 354.0
   }
-  size {
-    x: 200.0
-    y: 100.0
+  scale {
+    x: 1.63296
+    y: 1.63296
+    z: 1.63296
   }
-  type: TYPE_TEXT
-  text: "Score: 0"
-  font: "PixelFont"
-  id: "score_label"
+  type: TYPE_BOX
+  texture: "player/sedge"
+  id: "box"
   inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
 }
 nodes {
   position {
     x: 640.0
-    y: 466.0
+    y: 387.0
+    z: 1.0
   }
   size {
     x: 200.0
     y: 100.0
   }
-  type: TYPE_TEXT
-  text: "Game Over!"
-  font: "PixelFont"
-  id: "score_label1"
-  inherit_alpha: true
-}
-nodes {
-  position {
-    x: 640.0
-    y: 143.0
-  }
-  size {
-    x: 200.0
-    y: 100.0
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
   }
   type: TYPE_TEXT
   text: "Press Enter to Play Again!"
@@ -50,8 +50,25 @@ nodes {
 }
 nodes {
   position {
-    x: 640.0
-    y: 255.0
+    x: 223.0
+    y: 631.0
+    z: 1.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "damn"
+  font: "PixelFont_XL"
+  id: "score_label1"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 1093.0
+    y: 612.0
+    z: 1.0
   }
   size {
     x: 200.0
@@ -61,6 +78,22 @@ nodes {
   text: "Score: 0"
   font: "PixelFont"
   id: "highscore_label"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 640.0
+    y: 613.0
+    z: 1.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "Score: 0"
+  font: "PixelFont"
+  id: "score_label"
   inherit_alpha: true
 }
 material: "/builtins/materials/gui.material"

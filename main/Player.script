@@ -2,7 +2,7 @@ local top_magnet_location = vmath.vector3()
 local bottom_magnet_location = vmath.vector3()
 
 
-go.property("health", 5)
+go.property("health", 1)
 
 
 function init(self)

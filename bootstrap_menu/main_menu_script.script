@@ -8,4 +8,5 @@ end
 
 function init(self)
 	msg.post(".", "acquire_input_focus")
+	sound.play("/go#sound")
 end

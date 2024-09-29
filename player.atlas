@@ -40,6 +40,12 @@ images {
 images {
   image: "/tiles/TABLE.png"
 }
+images {
+  image: "/tiles/EPIK_ANIME_WALLPEPER.png"
+}
+images {
+  image: "/tiles/sedge.png"
+}
 animations {
   id: "portal_anim"
   images {
