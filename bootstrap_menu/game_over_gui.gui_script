@@ -18,7 +18,8 @@ function init(self)
 	local highscore_label = gui.get_node("highscore_label")
 	gui.set_text(score_label, "Score: " .. data.score)
 	gui.set_text(highscore_label, "Hi-Score: " .. curr_highscore)
-
+	local fade = gui.get_node("box1")
+	gui.animate(fade, "color.w", 0, gui.EASING_OUTSINE, 5, .5)
 	sound.play("/go#sound")
 end
 

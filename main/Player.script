@@ -2,7 +2,7 @@ local top_magnet_location = vmath.vector3()
 local bottom_magnet_location = vmath.vector3()
 
 
-go.property("health", 1)
+go.property("health", 5)
 
 
 function init(self)
@@ -39,17 +39,19 @@ function on_message(self, message_id, message, sender)
 				sound.play("/sounds#damage")
 
 				if self.health == 0 then
-					local highscore = sys.get_save_file("sys_save_load", "highscore")
+					timer.delay(.05, false, function()
+						local highscore = sys.get_save_file("sys_save_load", "highscore")
 
-					local curr_highscore = sys.load(highscore).highscore or 0 
-					
-					local filename = sys.get_save_file("sys_save_load", "score")
-					sys.save(filename, { score = self.score })
+						local curr_highscore = sys.load(highscore).highscore or 0 
 
-					if self.score > curr_highscore then
-						sys.save(highscore, { highscore = self.score })
-					end
-					msg.post("loader:/go#loader", "game_over")
+						local filename = sys.get_save_file("sys_save_load", "score")
+						sys.save(filename, { score = self.score })
+
+						if self.score > curr_highscore then
+							sys.save(highscore, { highscore = self.score })
+						end
+						msg.post("loader:/go#loader", "game_over")
+					end)
 				end
 			end
 
